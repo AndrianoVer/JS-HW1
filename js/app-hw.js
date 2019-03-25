@@ -1,49 +1,49 @@
 // 1.Build a function that does currency converter from USD to UAH (1 USD = 8 UAH).
-function convert() {
-	return 8;
+function convert(UAH) {
+	return console.log(8 * UAH);
 };
-console.log( 2 * convert());
+convert(2);
 
 
 // 2. A function which returns reversed string.
-let reversStr = 'cba'; // створюємо змінну reversStr;
-let reversRes = ''; // в змінну reversRes будемо записувати нашу перевернуту стрічку;
-
-for (i = reversStr.length - 1; i >= 0; i--) { //перебираємо строку циклом починаючи з кінця строки, пишемо умову
-	// i = reversStr.length - 1, i >= 0 - true до початкового індексу, йдемо з кроком i--;
-	reversRes += reversStr[i];	// наша нова змінна reversRes буде складатись з 2 - 1 - 0 індексу
+function reverseString(reversStr) {	
+	let reversRes = '';
+	for (i = reversStr.length - 1; i >= 0; i--) {
+		reversRes += reversStr[i];
+	}
+	return console.log(reversRes);
 }
-console.log(reversRes);
+reverseString('cba');
 
 // 3.A function which prints the stair picture of size n
-var rows = 3;
-for (i = 1; i <= rows; i++) {
-	for (k = 1; k <= (rows - 1); k++) {
-		document.write('&nbsp;');         // https://www.youtube.com/watch?v=ItOmYp9AKOA 
-												 // передивився раз 5 поки зрозумів		
+function stairs(stairsNum) {
+	var rows = 3;
+	for (i = 1; i <= rows; i++) {
+		for (k = 1; k <= (rows - 1); k++) {
+			document.write('&nbsp;');
+		}
+		for (j = 1; j <= i; j++) {
+			document.write('#');
+		}
+		document.write('<br/>');
 	}
-	for (j = 1; j <= i; j++) {
-		document.write('#');
-	}
-	document.write('<br/>');
+	return stairsNum;
 }
+stairs();
+
 
 // 4.A function which returns total sum of a range
 
 function sumNumber(arr) {
-	var min = Math.min(arr[0], arr[1]); // повертає найменьше значення зі списку аргументів
-	var max = Math.max(arr[0], arr[1]); // повертає найбільше значення зі списку аргументів
-
-	var range = []; //  створюємо новий масив, куди будемо пушити наші значення після того як 
-	// переберемо його циклом for
-
-	for (i = min; i <= max; i++) { //  перебираємо масив, доки умова true пушимо наші ітерації в новий масив range;
+	let min = Math.min(arr[0], arr[1]);
+	let max = Math.max(arr[0], arr[1]);
+	const range = []; 
+	for (i = min; i <= max; i++) { 
 		range.push(i);
 	}
-	return range.reduce(function (a, b) { // використовуємо метод reduce для того щоби додати всі наші ітерації;
+	return range.reduce(function (a, b) { 
 		return a + b;
 	});
-
 };
 console.log(sumNumber([2, 4, 5]));
 console.log(sumNumber([-1, 3, 6]));
@@ -57,55 +57,71 @@ console.log(smallestNumber([10, 5, 11]));
 console.log(smallestNumber([3, 8, 4]));
 
 // 6.A function which prints the stair picture of size n
-var rowsNew = 3;
-for (i = 1; i <= rowsNew; i++) {
-	for (k = 1; k <= ( rowsNew - i ); k++) {
-		document.write('&nbsp;');
+
+function stairs2(stairsNumMiddle) {
+	let rowsNew = 3;
+	for (i = 1; i <= rowsNew; i++) {
+		for (k = 1; k <= (rowsNew - i); k++) {
+			document.write('&nbsp;');
+		}
+		for (j = 1; j <= i; j++) {
+			document.write('#');
+		}
+		document.write('<br/>');
 	}
-	for (j = 1; j <= i; j++) {
-		document.write('#');
-	}
-	document.write('<br/>');
 }
+stairs2();
 
 // 7. A function which transforms first and last letter to uppercase.
-let str = 'abc'; // створюємо змінну str;
-let res = ''; // в змінну res будемо записувати нашу нову стрічку з великими буквами;
 
-for (let i = 0; i < str.length; i++) { // перебираємо строку циклом починаючи з початку строки, поки (i < str.length) = true цикл працює;
-	if (str[i] === str[0] || i === str.length - 1) { // шукаємо першу та останню букву в строці;
-		res += str[i].toUpperCase(); // результат перший та останній символ з великої літери;
-	} else {
-		res += str[i]; // добавляемо першту символів в нашу нову строку в якій вже є перша та остання літера велика;
-	}	
+function transormToUppercase(str){	
+	let res = '';
+	for (let i = 0; i < str.length; i++) { 
+		if (str[i] === str[0] || i === str.length - 1) { 
+			res += str[i].toUpperCase(); 
+		} else {
+			res += str[i]; 
+		}
+	}
+	return console.log(res);
 }
-console.log(res);
+transormToUppercase('abc');
 
 // 8.A function which returns true if string contains
 
 function cursorCheck(string) {
-	if (string.includes('OstaP') || string.includes('ironman') || string.includes('cursor')) { // як це скоротити?
-		return true;		
-	} else {
-		return false;
-	}
+	const lowerStr = string.toLowerCase();
+	return lowerStr.includes('ostap') || lowerStr.includes('ironman') || lowerStr.includes('cursor')
 }
 console.log(cursorCheck('Hello I am OstaP')); // true
 console.log(cursorCheck('Superman is here')); // false
 
 // 9.A function which returns a string with all letters in uppercase.
-let strNew = 'abc'; // створюємо змінну str;
-let resNew = ''; // в змінну res будемо записувати нашу нову стрічку з великими буквами;
-
-function allUppercase() {
+function allUppercase(strNew) {
+	let resNew = '';	
 	for (i = 0; i <= strNew.length; i++) {
-		if (i <= strNew.length) {
-			resNew += strNew[i].toUpperCase() + strNew[i + 1].toUpperCase() + strNew[i + 2].toUpperCase();	// - як можна скоротити цей запис?		
-		} 
-		return resNew;		
+	if (i <= strNew.length) {
+		resNew += strNew[i].toUpperCase() + strNew[i + 1].toUpperCase() + strNew[i + 2].toUpperCase();		
+	} 
+	return console.log(resNew);		
 	}	
 }
-console.log(allUppercase());
+allUppercase('abc');
+
+function Upper(str) {
+	const toUpperCase = str =>
+		Array.prototype.map.call(str, (el, i) => {
+			const charCode = el.charCodeAt(0);
+
+			const isLowerCaseChar = charCode >= 97 && charCode <= 122;
+			if (isLowerCaseChar) {
+				return String.fromCharCode(charCode - 32);
+			}
+			return el;
+		}).join('');
+
+}
+
 
 
 // 10.A function which removes duplication of letters in string
@@ -136,12 +152,11 @@ function fib(n) {
 	}
 	else {
 		return (fib (n - 1) + fib (n - 2))
-	}
-	
+	}	
 }
-console.log(fib(3));
-console.log(fib(5));
+console.log(fib(6));
 console.log(fib(7));
+console.log(fib(8));
 
 
 
