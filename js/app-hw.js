@@ -97,30 +97,19 @@ console.log(cursorCheck('Hello I am OstaP')); // true
 console.log(cursorCheck('Superman is here')); // false
 
 // 9.A function which returns a string with all letters in uppercase.
-function allUppercase(strNew) {
-	let resNew = '';	
-	for (i = 0; i <= strNew.length; i++) {
-	if (i <= strNew.length) {
-		resNew += strNew[i].toUpperCase() + strNew[i + 1].toUpperCase() + strNew[i + 2].toUpperCase();		
-	} 
-	return console.log(resNew);		
-	}	
-}
-allUppercase('abc');
 
-function Upper(str) {
-	const toUpperCase = str =>
-		Array.prototype.map.call(str, (el, i) => {
-			const charCode = el.charCodeAt(0);
-
-			const isLowerCaseChar = charCode >= 97 && charCode <= 122;
+function allUppercase(strNew) { 
+	let stringToUppercase = '';	
+	for (i = 0; i < strNew.length; i++) {
+		console.log(strNew += strNew[i]);
+		const charcode = strNew.charCodeAt(i);
+		const isLowerCaseChar = charcode >= 97 && charcode <= 122;	
 			if (isLowerCaseChar) {
-				return String.fromCharCode(charCode - 32);
-			}
-			return el;
-		}).join('');
-
-}
+				return stringToUppercase += String.fromCharCode(isLowerCaseChar);
+			}		
+	}	
+};
+console.log(allUppercase('abc'));
 
 
 
@@ -157,10 +146,3 @@ function fib(n) {
 console.log(fib(6));
 console.log(fib(7));
 console.log(fib(8));
-
-
-
-
-
-
-
