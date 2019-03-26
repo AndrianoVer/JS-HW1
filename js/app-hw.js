@@ -106,7 +106,7 @@ function convertToUpperCase(strNew) {
 		if (charcode >= 97 && charcode <= 122) {
 			stringToUppercase += String.fromCharCode(charcode - 32)
 		} else {
-			stringToUppercase += strNew.charAt(i);
+			stringToUppercase += strNew.charCodeAt(i);
 		}			
 	}
 	return console.log(stringToUppercase);	
