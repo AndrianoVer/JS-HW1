@@ -98,20 +98,20 @@ console.log(cursorCheck('Superman is here')); // false
 
 // 9.A function which returns a string with all letters in uppercase.
 
-function allUppercase(strNew) { 
+function convertToUpperCase(strNew) { 
 	let stringToUppercase = '';	
+
 	for (i = 0; i < strNew.length; i++) {
-		console.log(strNew += strNew[i]);
-		const charcode = strNew.charCodeAt(i);
-		const isLowerCaseChar = charcode >= 97 && charcode <= 122;	
-			if (isLowerCaseChar) {
-				return stringToUppercase += String.fromCharCode(isLowerCaseChar);
-			}		
-	}	
+		const charcode = strNew.charCodeAt(i);		
+		if (charcode >= 97 && charcode <= 122) {
+			stringToUppercase += String.fromCharCode(charcode - 32)
+		} else {
+			stringToUppercase += strNew.charAt(i);
+		}			
+	}
+	return console.log(stringToUppercase);	
 };
-console.log(allUppercase('abc'));
-
-
+convertToUpperCase('abcdfasdfasdf');
 
 // 10.A function which removes duplication of letters in string
 function removeDuplicationLetters(strdouble) { 
