@@ -1,6 +1,6 @@
 // 1.Build a function that does currency converter from USD to UAH (1 USD = 8 UAH).
 function convert(UAH) {
-	return console.log(8 * UAH);
+	return (8 * UAH);
 };
 convert(2);
 
@@ -11,7 +11,7 @@ function reverseString(reversStr) {
 	for (i = reversStr.length - 1; i >= 0; i--) {
 		reversRes += reversStr[i];
 	}
-	return console.log(reversRes);
+	return reversRes;
 }
 reverseString('cba');
 
@@ -83,7 +83,7 @@ function transormToUppercase(str){
 			res += str[i]; 
 		}
 	}
-	return console.log(res);
+	return res;
 }
 transormToUppercase('abc');
 
@@ -109,7 +109,7 @@ function convertToUpperCase(strNew) {
 			stringToUppercase += strNew.charCodeAt(i);
 		}			
 	}
-	return console.log(stringToUppercase);	
+	return stringToUppercase;	
 };
 convertToUpperCase('abcdfasdfasdf');
 
